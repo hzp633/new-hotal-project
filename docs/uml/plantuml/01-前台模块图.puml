@@ -1,0 +1,96 @@
+@startuml 前台功能模块图
+' 酒店预约管理系统 — 前台（C端）功能模块图
+title <size:20><b>酒店预约管理系统 — 前台（C端）功能模块图</b></size>\n<size:12>技术栈：Vue 3 + Element Plus</size>
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam defaultFontName "Microsoft YaHei"
+skinparam defaultFontSize 12
+skinparam ArrowColor #C97B3C
+
+skinparam packageStyle rectangle
+skinparam package {
+  BackgroundColor #FFFBF5
+  BorderColor #C97B3C
+  FontColor #8A4B18
+  FontSize 13
+  FontStyle bold
+}
+
+skinparam file {
+  BackgroundColor #FFFFFF
+  BorderColor #E0AE7B
+  FontColor #333333
+  FontSize 11
+}
+
+package "前台（C端）功能模块" {
+
+  package "1. 用户认证模块" as M1 {
+    file "用户注册" as M1a
+    file "用户登录" as M1b
+    file "密码找回" as M1c
+    file "Token 刷新" as M1d
+    file "退出登录" as M1e
+  }
+
+  package "2. 酒店首页模块" as M2 {
+    file "酒店信息展示" as M2a
+    file "图片轮播" as M2b
+    file "公告展示" as M2c
+  }
+
+  package "3. 房型浏览模块" as M3 {
+    file "日期查询" as M3a
+    file "条件筛选" as M3b
+    file "价格/销量排序" as M3c
+    file "房型列表" as M3d
+    file "房型详情" as M3e
+    file "评论查看" as M3f
+  }
+
+  package "4. 在线预订模块" as M4 {
+    file "选择日期房数" as M4a
+    file "价格实时计算" as M4b
+    file "选择入住人" as M4c
+    file "提交订单" as M4d
+    file "模拟支付" as M4e
+  }
+
+  package "5. 订单管理模块" as M5 {
+    file "订单列表" as M5a
+    file "订单详情" as M5b
+    file "取消订单" as M5c
+    file "继续支付" as M5d
+    file "再次预订" as M5e
+  }
+
+  package "6. 入住记录模块" as M6 {
+    file "在住状态查看" as M6a
+    file "历史入住记录" as M6b
+  }
+
+  package "7. 我的收藏模块" as M7 {
+    file "收藏/取消收藏" as M7a
+    file "收藏列表" as M7b
+  }
+
+  package "8. 评价评论模块" as M8 {
+    file "发表评价" as M8a
+    file "我的评价" as M8b
+  }
+
+  package "9. 常用入住人模块" as M9 {
+    file "入住人列表" as M9a
+    file "新增/编辑/删除" as M9b
+    file "设为默认" as M9c
+  }
+
+  package "10. 个人中心模块" as M10 {
+    file "资料修改" as M10a
+    file "密码修改" as M10b
+    file "订单快捷入口" as M10c
+  }
+}
+
+@enduml

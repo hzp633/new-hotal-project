@@ -1,0 +1,50 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+spring:
+  application:
+    name: hotel-reservation
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/hotel_reservation?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      database: 0
+      # password:
+      timeout: 3000ms
+  jackson:
+    # 后端返回前端时序列化为 Asia/Shanghai 时区
+    time-zone: Asia/Shanghai
+    date-format: yyyy-MM-dd HH:mm:ss
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: auto            # 主键自增
+      # 本系统不使用 deleted 逻辑删除字段，关键数据由 status 字段控制
+
+# 自定义 JWT 配置：用户端与管理员端使用不同密钥（满足权限区分）
+hotel:
+  jwt:
+    user:
+      secret: hotel-user-jwt-secret-key-2026-please-change-in-production
+      access-expire: 7200       # Access Token 有效期 2 小时（秒）
+      refresh-expire: 604800    # Refresh Token 有效期 7 天（秒）
+    admin:
+      secret: hotel-admin-jwt-secret-key-2026-please-change-in-production
+      access-expire: 7200
+      refresh-expire: 604800
+
+logging:
+  level:
+    com.hotel: debug

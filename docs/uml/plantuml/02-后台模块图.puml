@@ -1,0 +1,95 @@
+@startuml 后台功能模块图
+' 酒店预约管理系统 — 后台（B端）功能模块图
+title <size:20><b>酒店预约管理系统 — 后台（B端）功能模块图</b></size>\n<size:12>技术栈：Vue 3 + Element Plus + ECharts</size>
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam defaultFontName "Microsoft YaHei"
+skinparam defaultFontSize 12
+skinparam ArrowColor #4A6FA5
+
+skinparam packageStyle rectangle
+skinparam package {
+  BackgroundColor #F5F8FC
+  BorderColor #4A6FA5
+  FontColor #23456B
+  FontSize 13
+  FontStyle bold
+}
+
+skinparam file {
+  BackgroundColor #FFFFFF
+  BorderColor #A9C0DA
+  FontColor #333333
+  FontSize 11
+}
+
+package "后台（B端）功能模块" {
+
+  package "1. 数据仪表盘模块" as B1 {
+    file "核心指标统计" as B1a
+    file "入住率统计" as B1b
+    file "订单/营收趋势" as B1c
+    file "房型预订占比" as B1d
+  }
+
+  package "2. 用户管理模块" as B2 {
+    file "用户列表查询" as B2a
+    file "用户详情" as B2b
+    file "启用/禁用用户" as B2c
+  }
+
+  package "3. 酒店信息管理模块" as B3 {
+    file "酒店信息编辑" as B3a
+    file "图片管理" as B3b
+  }
+
+  package "4. 房型管理模块" as B4 {
+    file "房型列表" as B4a
+    file "新增房型" as B4b
+    file "编辑房型" as B4c
+    file "启用/停用房型" as B4d
+  }
+
+  package "5. 房间管理模块" as B5 {
+    file "房间列表" as B5a
+    file "新增/编辑/删除" as B5b
+    file "房间状态管理" as B5c
+    file "房态概览图" as B5d
+  }
+
+  package "6. 订单管理模块" as B6 {
+    file "订单列表查询" as B6a
+    file "订单详情" as B6b
+    file "取消订单" as B6c
+  }
+
+  package "7. 入住退住管理模块" as B7 {
+    file "待入住列表" as B7a
+    file "办理入住" as B7b
+    file "在住列表" as B7c
+    file "办理退住" as B7d
+    file "入住记录查询" as B7e
+  }
+
+  package "8. 评论管理模块" as B8 {
+    file "评论列表" as B8a
+    file "评论审核" as B8b
+    file "回复评论" as B8c
+  }
+
+  package "9. 支付退款管理模块" as B9 {
+    file "退款列表" as B9a
+    file "确认退款" as B9b
+    file "退款详情" as B9c
+  }
+
+  package "10. 公告管理模块" as B10 {
+    file "公告列表" as B10a
+    file "发布公告" as B10b
+    file "编辑/删除" as B10c
+    file "公告上下架" as B10d
+  }
+}
+
+@enduml

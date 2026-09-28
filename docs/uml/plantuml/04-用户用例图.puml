@@ -1,0 +1,109 @@
+@startuml 用户用例图
+' 酒店预约管理系统 — 普通用户（C端）用例图
+title <size:20><b>酒店预约管理系统 — 用户用例图</b></size>
+
+left to right direction
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam defaultFontName "Microsoft YaHei"
+skinparam defaultFontSize 12
+skinparam ArrowColor #C97B3C
+skinparam ArrowFontColor #8A4B18
+
+skinparam actor {
+  BackgroundColor #FFFBF5
+  BorderColor #C97B3C
+  FontColor #8A4B18
+  FontStyle bold
+}
+
+skinparam usecase {
+  BackgroundColor #FFFFFF
+  BorderColor #E0AE7B
+  FontColor #7A4B1E
+  FontSize 12
+}
+
+skinparam rectangle {
+  BackgroundColor #FFFDFA
+  BorderColor #C97B3C
+  FontColor #8A4B18
+  FontSize 14
+  FontStyle bold
+}
+
+actor "普通用户" as User
+
+rectangle "酒店预约管理系统（C端前台）" {
+
+  usecase "注册账号" as UC_Reg
+  usecase "登录系统" as UC_Login
+  usecase "找回密码" as UC_Pwd
+
+  usecase "浏览酒店首页" as UC_Home
+  usecase "查看公告" as UC_Notice
+
+  usecase "搜索房型" as UC_Search
+  usecase "筛选与排序房型" as UC_Filter
+  usecase "查看房型详情" as UC_Detail
+  usecase "查看房型评价" as UC_Review
+
+  usecase "在线预订" as UC_Book
+  usecase "选择入住日期" as UC_Book1
+  usecase "选择入住人" as UC_Book2
+  usecase "计算房费总价" as UC_Book3
+
+  usecase "在线支付" as UC_Pay
+
+  usecase "查询我的订单" as UC_Order
+  usecase "取消订单" as UC_Cancel
+  usecase "再次预订" as UC_Again
+
+  usecase "查看入住记录" as UC_Rec
+
+  usecase "收藏/取消收藏房型" as UC_Fav
+  usecase "管理收藏列表" as UC_FavList
+
+  usecase "发表入住评价" as UC_Pub
+  usecase "查看我的评价" as UC_MyReview
+
+  usecase "管理常用入住人" as UC_Guest
+
+  usecase "管理个人资料" as UC_Profile
+  usecase "修改密码" as UC_ModPwd
+}
+
+'(用户与用例)
+User --> UC_Reg
+User --> UC_Login
+User --> UC_Pwd
+User --> UC_Home
+User --> UC_Notice
+User --> UC_Search
+User --> UC_Filter
+User --> UC_Detail
+User --> UC_Review
+User --> UC_Book
+User --> UC_Pay
+User --> UC_Order
+User --> UC_Cancel
+User --> UC_Again
+User --> UC_Rec
+User --> UC_Fav
+User --> UC_FavList
+User --> UC_Pub
+User --> UC_MyReview
+User --> UC_Guest
+User --> UC_Profile
+User --> UC_ModPwd
+
+' 继承关系：登录后才有业务权限（登录为其他业务用例的前置）
+UC_Book ..> UC_Login : <<include>>
+
+' 包含关系
+UC_Book ..> UC_Book1 : <<include>>
+UC_Book ..> UC_Book2 : <<include>>
+UC_Book ..> UC_Book3 : <<include>>
+
+@enduml

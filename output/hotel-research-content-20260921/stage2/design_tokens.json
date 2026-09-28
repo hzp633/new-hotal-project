@@ -1,0 +1,27 @@
+{
+  "genre": "academic-paper",
+  "theme_name": "academic-paper",
+  "theme_file": "tokens/themes/academic-paper.json",
+  "typography_rules": "tokens/rules/gb-t-7713-academic.md",
+  "css_variables": {
+    "--typography-fontFamily-heading": "黑体, SimHei",
+    "--typography-fontFamily-body": "宋体, SimSun",
+    "--typography-fontFamily-bodyLatin": "Times New Roman, serif",
+    "--typography-fontSize-title": "18pt",
+    "--typography-fontSize-h1": "15pt",
+    "--typography-fontSize-h2": "14pt",
+    "--typography-fontSize-h3": "12pt",
+    "--typography-fontSize-body": "12pt",
+    "--typography-fontSize-caption": "10.5pt",
+    "--typography-lineHeight-body": "1.5",
+    "--typography-fontWeight-heading": "bold",
+    "--color-text": "#000000",
+    "--color-muted": "#666666",
+    "--color-border": "#999999",
+    "--color-bg": "#ffffff",
+    "--spacing-paragraph": "0.5em",
+    "--spacing-indent": "2em",
+    "--layout-pageSize": "A4",
+    "--layout-contentWidth": "16.0cm"
+  }
+}

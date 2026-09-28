@@ -1,0 +1,98 @@
+@startuml 管理员用例图
+' 酒店预约管理系统 — 管理员（B端）用例图
+title <size:20><b>酒店预约管理系统 — 管理员用例图</b></size>
+
+left to right direction
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam defaultFontName "Microsoft YaHei"
+skinparam defaultFontSize 12
+skinparam ArrowColor #4A6FA5
+skinparam ArrowFontColor #23456B
+
+skinparam actor {
+  BackgroundColor #F5F8FC
+  BorderColor #4A6FA5
+  FontColor #23456B
+  FontStyle bold
+}
+
+skinparam usecase {
+  BackgroundColor #FFFFFF
+  BorderColor #7B9BC4
+  FontColor #23456B
+  FontSize 12
+}
+
+skinparam rectangle {
+  BackgroundColor #FBFCFE
+  BorderColor #4A6FA5
+  FontColor #23456B
+  FontSize 14
+  FontStyle bold
+}
+
+actor "管理员" as Admin
+actor "超级管理员" as Super
+
+rectangle "酒店预约管理系统（B端管理后台）" {
+
+  usecase "登录管理后台" as UC_Login
+
+  usecase "查看数据仪表盘" as UC_Dash
+
+  usecase "查询用户信息" as UC_U1
+  usecase "封禁/解封用户" as UC_U2
+
+  usecase "管理酒店信息" as UC_Hotel
+
+  usecase "管理房型信息" as UC_RT
+
+  usecase "管理房间信息" as UC_Room
+
+  usecase "查询订单" as UC_O1
+  usecase "取消订单" as UC_O2
+
+  usecase "办理入住" as UC_CI
+  usecase "分配空闲房间" as UC_CI1
+  usecase "办理退住" as UC_CO
+  usecase "结算额外费用" as UC_CO1
+  usecase "查询入住记录" as UC_Rec
+
+  usecase "审核用户评论" as UC_R1
+  usecase "回复用户评论" as UC_R2
+
+  usecase "处理退款申请" as UC_Pay
+
+  usecase "发布/管理公告" as UC_Ann
+
+  usecase "管理管理员账号" as UC_Acc
+}
+
+' 管理员与用例
+Admin --> UC_Login
+Admin --> UC_Dash
+Admin --> UC_U1
+Admin --> UC_U2
+Admin --> UC_Hotel
+Admin --> UC_RT
+Admin --> UC_Room
+Admin --> UC_O1
+Admin --> UC_O2
+Admin --> UC_CI
+Admin --> UC_CO
+Admin --> UC_Rec
+Admin --> UC_R1
+Admin --> UC_R2
+Admin --> UC_Pay
+Admin --> UC_Ann
+
+' 超级管理员继承管理员全部权限，并独有账号管理
+Super --> UC_Acc
+
+' 用例之间的包含关系
+UC_CI ..> UC_CI1 : <<include>>
+UC_CO ..> UC_CO1 : <<include>>
+
+@enduml
